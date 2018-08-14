@@ -1,0 +1,18 @@
+
+<div class="wrapper">
+  <div>
+    <form>
+      <h3>Add Recipe</h3>
+      <input type="text" [(ngModel)]="recipeInput" [ngModelOptions]="{standalone: true}">
+      <input type="submit" class="btn" value="save" (click)="add()">
+    </form>
+    test
+  </div>
+
+  <div>
+
+    <ul >
+      <li *ngFor="let recipe of recipes; let i = index"><a routerLink="recipe/{{i}}">{{ recipe.name }} </a></li>
+    </ul>
+  </div>
+</div>
