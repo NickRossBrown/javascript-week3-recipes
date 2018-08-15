@@ -1,40 +1,33 @@
-<h1>
-  {{this.recipes[this.id].name}}'s ingredients:
-</h1>
-<h3 *ngFor="let x of this.recipes[this.id].ingredients">{{ x }}</h3>
-<h3>Add ingredient</h3>
-<input type="text" [(ngModel)]="ingredientInput" [ngModelOptions]="{standalone: true}" placeholder="Add Ingredient">
-<input type="submit" class="btn" value="save" (click)="addIngredient()">
+<div class="container color-dark">
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<h1>{{this.recipes[this.id].name}}'s intructions</h1>
-<h3 *ngFor="let x of this.recipes[this.id].instructions">{{ x }}</h3>
-<div class="addInstruction">
+  <div class="container color-medium">
+    <h1>{{this.recipes[this.id].name}}'s ingredients:</h1>
+    <h3 class=color-light *ngFor="let x of this.recipes[this.id].ingredients; let i = index" (click)="removeIngredient(i)">{{ x }}</h3>
+    <h3>Add ingredient</h3>
+    <input type="text" [(ngModel)]="ingredientInput" name="ingredients" placeholder="Add Ingredient">
+    <input type="submit" class="btn" value="save" (click)="addIngredient()">
+  </div>
 
-  <input type="text" [(ngModel)]="newInstruction" [ngModelOptions]="{standalone: true}" placeholder="Add Instruction">
-  <input type="submit" class="btn" value="save" (click)="addInstruction(newInstruction)">
+  <div class="container color-medium">
+    <h1>{{this.recipes[this.id].name}}'s intructions</h1>
+    <h3 class=color-light *ngFor="let x of this.recipes[this.id].instructions; let i = index" (click)="removeInstruction(i)">{{ x }}</h3>
 
+    <div class="addInstruction">
+      <input type="text" [(ngModel)]="newInstruction" [ngModelOptions]="{standalone: true}" placeholder="Add Instruction">
+      <input type="submit" class="btn" value="save" (click)="addInstruction(newInstruction)">
+    </div>
+  </div>
+
+  <div class="container color-medium">
+    <div class="changeRecipeName">
+      <h3>Change Recipe Name</h3>
+      <input type="text" [(ngModel)]="newName" [ngModelOptions]="{standalone: true}" placeholder="Change Recipe Name">
+      <input type="submit" class="btn" value="save" (click)="changeRecipeName(newName)">
+    </div>
+  </div>
+
+  <div class="returnHome">
+    <h3><a routerLink="">Return Home</a></h3>
+  </div>
 </div>
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-
-<div class="changeRecipeName">
-  <h3>Change Recipe Name</h3>
-  <input type="text" [(ngModel)]="newName" [ngModelOptions]="{standalone: true}" placeholder="Change Recipe Name">
-  <input type="submit" class="btn" value="save" (click)="changeRecipeName(newName)">
-
-</div>
-<div class="returnHome">
-  <h3><a routerLink="">Return Home</a></h3>
-</div>
-
 <!-- {{this.recipes[this.id].ingredients}} -->

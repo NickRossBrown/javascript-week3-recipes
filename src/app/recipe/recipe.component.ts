@@ -39,4 +39,12 @@ export class RecipeComponent implements OnInit {
     this.recipes[this.id].instructions.push( newInstruction)
   }
 
+  removeIngredient(i) {
+    this.recipes[this.id].ingredients.splice(i,1)
+  }
+
+  removeInstruction(i) {
+    this.recipes[this.id].instructions.splice(i,1)
+  }
+
 }
