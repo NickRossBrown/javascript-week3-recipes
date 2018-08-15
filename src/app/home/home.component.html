@@ -6,7 +6,6 @@
       <input type="text" [(ngModel)]="recipeInput" [ngModelOptions]="{standalone: true}">
       <input type="submit" class="btn" value="save" (click)="add()">
     </form>
-    test
   </div>
 
   <div>
@@ -15,4 +14,7 @@
       <li *ngFor="let recipe of recipes; let i = index"><a routerLink="recipe/{{i}}">{{ recipe.name }} </a></li>
     </ul>
   </div>
+
+
+
 </div>
